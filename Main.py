@@ -1,60 +1,18 @@
 
 
-from tkinter import E
+historial= [ 
+    [34.5, 45.6, "2022/02/02 17:20:24"],
+    [34.5, 46.3, "2022/02/02 17:20:34"],
+    [35.5, 47.3, "2022/02/02 17:20:44"],
+    [35.5, 47.3, "2022/02/02 17:20:54"],
+    [34.5, 48.3, "2022/02/02 17:21:04"],
+    [33.5, 49.3, "2022/02/02 17:21:14"],
 
+]
 
-def encriptar(texto):
-    print("El texto a encriptar es: " + texto)
+indiceLongitud = 0
+indicelatitud = 1
+indiceFecha = 2
 
-    textoFinal = ""
-    for letra in texto:
-        textoFinal+= letra + "x"
-    return textoFinal
-
-
-def desencriptar(texto):
-    print("El texto a desencriptar es: " + texto)
-
-    textoFinal = ""
-    contador = 0
-    for letra in texto:
-        if contador %2 == 0:
-            textoFinal+= letra 
-        contador += 1
-    return textoFinal
-
-
-def encriptarArchivo(rutaArchivo):
-    archivo = open(rutaArchivo, "r")
-    texto = archivo.read()
-    archivo.close()
-    textoEncriptado = encriptar(texto)
-
-    archivo = open(rutaArchivo, "w")
-    archivo.write(textoEncriptado)
-    archivo.close()
-
-    print("El texto se encripto correctamente")
-
-
-def desencriptarArchivo(rutaArchivo):
-    archivo = open(rutaArchivo, "r")
-    texto = archivo.read()
-    archivo.close()
-    textoDesencriptado = desencriptar(texto)
-
-    archivo = open(rutaArchivo, "w")
-    archivo.write(textoDesencriptado)
-    archivo.close()   
-
-    print("El texto se desencripto correctamente")
-
-respuestaEoD = input(" Presione E para encriptar, o D para desencriptar")
-rutaArchivo= input("ingrese la ruta del archivo")
-
-if respuestaEoD == "E": 
-    encriptarArchivo(rutaArchivo)
-else:
-   desencriptarArchivo(rutaArchivo)
- 
-
+for coordenada in historial:
+    print(coordenada)
